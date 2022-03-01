@@ -10,7 +10,7 @@ type U16 struct{}
 // Encode converts uint16 to slice of 2 bytes.
 func (c U16) Encode(d interface{}) []byte {
 	b := make([]byte, 2)
-	v := d.(uint16)
+	v := uint16(d.(uint16))
 	binary.LittleEndian.PutUint16(b, v)
 	return b
 }
@@ -22,7 +22,7 @@ func (c U16) Decode(b []byte) (int, interface{}) {
 	size := int(2)
 	s := b[:size]
 
-	d := binary.LittleEndian.Uint16(s)
+	d := uint16(binary.LittleEndian.Uint16(s))
 	return size, d
 }
 
@@ -42,7 +42,7 @@ type U32 struct{}
 // Encode converts uint32 to slice of 4 bytes.
 func (c U32) Encode(d interface{}) []byte {
 	b := make([]byte, 4)
-	v := d.(uint32)
+	v := uint32(d.(uint32))
 	binary.LittleEndian.PutUint32(b, v)
 	return b
 }
@@ -54,7 +54,7 @@ func (c U32) Decode(b []byte) (int, interface{}) {
 	size := int(4)
 	s := b[:size]
 
-	d := binary.LittleEndian.Uint32(s)
+	d := uint32(binary.LittleEndian.Uint32(s))
 	return size, d
 }
 
@@ -74,7 +74,7 @@ type U64 struct{}
 // Encode converts uint64 to slice of 8 bytes.
 func (c U64) Encode(d interface{}) []byte {
 	b := make([]byte, 8)
-	v := d.(uint64)
+	v := uint64(d.(uint64))
 	binary.LittleEndian.PutUint64(b, v)
 	return b
 }
@@ -86,7 +86,7 @@ func (c U64) Decode(b []byte) (int, interface{}) {
 	size := int(8)
 	s := b[:size]
 
-	d := binary.LittleEndian.Uint64(s)
+	d := uint64(binary.LittleEndian.Uint64(s))
 	return size, d
 }
 

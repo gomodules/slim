@@ -43,7 +43,7 @@ func (a *U16) Get(idx int32) (uint16, bool) {
 
 	stIdx := a.Offsets[iBm]*2 + int32(cnt1)*2
 
-	return endian.Uint16(a.Elts[stIdx:]), true
+	return uint16(endian.Uint16(a.Elts[stIdx:])), true
 }
 
 // U32 is an implementation of Base with uint32 element
@@ -83,7 +83,7 @@ func (a *U32) Get(idx int32) (uint32, bool) {
 
 	stIdx := a.Offsets[iBm]*4 + int32(cnt1)*4
 
-	return endian.Uint32(a.Elts[stIdx:]), true
+	return uint32(endian.Uint32(a.Elts[stIdx:])), true
 }
 
 // U64 is an implementation of Base with uint64 element
@@ -123,7 +123,7 @@ func (a *U64) Get(idx int32) (uint64, bool) {
 
 	stIdx := a.Offsets[iBm]*8 + int32(cnt1)*8
 
-	return endian.Uint64(a.Elts[stIdx:]), true
+	return uint64(endian.Uint64(a.Elts[stIdx:])), true
 }
 
 // I16 is an implementation of Base with int16 element
